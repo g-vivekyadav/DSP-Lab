@@ -44,27 +44,34 @@ void main()
         		graph[i] = (int*)malloc(n * sizeof(int));
 				visited = (int*)malloc(n* sizeof(int));
 				values = (int*)malloc(n* sizeof(int));
+				queue=(int*)malloc(sizeof(int)*n);
+			for(i=0;i<n;i++)
+    			queue[i]=0;
     	//read the adjecency matrix
 			printf("\nEnter adjacency matrix of the graph:\n");
 			for(i=0;i<n;i++)
      			for(j=0;j<n;j++)
 					scanf("%d",&graph[i][j]);
     	//visited is initialized to zero
-   			for(i=0;i<n;i++)
+   			for(i=0;i<n;i++){
     		    visited[i]=0;
     		    values[i]=-1;
+    		}
     		printf("\nEnter the choice 1. DFS 2.BFS\n");
     		int choice2;
     		scanf("%d",&choice2);
-    		if(choice2==1)
-    			DFS(0,graph);
+    		if(choice2==1){
+    			printf("Enter source vertex: ");
+    			int source;
+    			scanf("%d",&source);
+    			DFS(source,graph);
+    		}
     		else if(choice2==2){
-    			queue=(int*)malloc(sizeof(int)*n);
-    			for(i=0;i<n;i++)
-    				queue[i]=0;
-    			BFS(0,graph);
-    			printf("0 ");
-    			for(i=0;i<n-1;i++){
+    			printf("Enter source vertex: ");
+    			int source2;
+    			scanf("%d",&source2);
+    			BFS(source2,graph);
+    			for(i=0;i<n;i++){
     				printf("%d ",values[i]);
 				}
     		}
