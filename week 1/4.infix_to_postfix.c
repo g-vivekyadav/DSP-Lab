@@ -106,33 +106,33 @@ if(tot==0 && check==0 && check2==1){
 	for(w=0;s3[w]!='\0';w++){//evaluate postfix expression
 	if(isdigit(s3[w])) 
 		push(s3[w]-'0');
-    else if(s3[w]==' ')
-    	flag=0;
+    	else if(s3[w]==' ')
+    		flag=0;
 	else{
 		if(s3[w]=='+'){
-		first=pop();
-		second=pop();
-		push(first+second);
+			first=pop();
+			second=pop();
+			push(first+second);
 		}
 		else if(s3[w]=='-'){
-		first=pop();
-		second=pop();
-		s[++top]=second-first;
+			first=pop();
+			second=pop();
+			s[++top]=second-first;
 		}
 		else if(s3[w]=='*'){
-		first=pop();
-		second=pop();
-		s[++top]=second*first;
+			first=pop();
+			second=pop();
+			s[++top]=second*first;
 		}
 		else if(s3[w]=='/'){
-		first=pop();
-		second=pop();
-		s[++top]=second/first;
+			first=pop();
+			second=pop();
+			s[++top]=second/first;
 		}
 		else if(s3[w]=='^'){
-		first=pop();
-		second=pop();
-		s[++top]=pow(second,first);
+			first=pop();
+			second=pop();
+			s[++top]=pow(second,first);
 		}
 	}
 	}
